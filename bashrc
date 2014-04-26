@@ -106,7 +106,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 export EDITOR=/usr/bin/vim
-source /etc/direct/direct_shell_rc
 
 export PATH=$PATH:$HOME/bin
 
@@ -128,13 +127,6 @@ fi
 
 
 export LESSCHAR=utf8
-
-
-# Debosh
-export DEBEMAIL=hmepas@yandex-team.ru
-export DEBFULLNAME="Pavel S. Khmelinsky"
-alias dch='dch --distributor=debian'
-# / Debosh
 
 # GPG-AGENT
 which gpg-agent > /dev/null
