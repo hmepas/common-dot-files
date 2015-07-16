@@ -7,6 +7,15 @@
 # the default umask is set in /etc/profile
 #umask 022
 
+if [ -z "$TMUX" ]; then
+    if [ ! -z "$SSH_TTY" ]; then
+        # we're not in a tmux session'
+        if [[ $SSH_AUTH_SOCK && `readlink ~/.ssh/ssh_auth_sock` != $SSH_AUTH_SOCK ]]; then
+            ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+        fi
+    fi
+fi
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -20,6 +29,3 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-if [[ $SSH_AUTH_SOCK && `readlink ~/.ssh/ssh_auth_sock` != $SSH_AUTH_SOCK ]]; then
-    ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
-fi
