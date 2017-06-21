@@ -128,3 +128,9 @@ if [ "$?" -eq 0 ]; then
  export GPG_TTY=`tty`
 fi
 # / GPG-AGENT
+
+# https://github.com/junegunn/fzf#installation
+if [ -f ~/.fzf.bash ]; then
+    source ~/.fzf.bash
+    export FZF_DEFAULT_COMMAND='ag -g ""'
+fi
