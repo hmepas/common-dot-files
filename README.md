@@ -8,4 +8,6 @@ done
 mkdir ~/bin
 curl https://raw.githubusercontent.com/hmepas/foose/master/foose > ~/bin/p
 chmod +x ~/bin/p
+curl https://raw.githubusercontent.com/hmepas/scripts/master/find > ~/bin/find
+chmod +x ~/bin/find
 ```
