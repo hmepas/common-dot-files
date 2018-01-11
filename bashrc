@@ -168,3 +168,5 @@ if [ -f ~/.fzf.bash ]; then
     _gen_fzf_default_opts
 fi
 # End of fzf
+
+. ~/bin/z.sh
