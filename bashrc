@@ -66,7 +66,8 @@ xterm*|rxvt*)
 esac
 
 # Update bash history after every command
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"""
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+alias hcl='history -c; history -r;' # re-read history file
 
 # some more ls aliases
 alias ll='ls -l'
