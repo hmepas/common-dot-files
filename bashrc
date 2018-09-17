@@ -109,6 +109,7 @@ if [ "$PS1" != "" -a "${STARTED_TMUX:-x}" = x -a "${SSH_TTY:-x}" != x ]; then
     STARTED_TMUX=1; export STARTED_TMUX
     DATE=`date +"%a_%H․%M"`
     FIRST_UNATTACHED=`tmux list-session | grep -v attached | perl -ne '/(^.+?):/ && (print "$1") && exit'`
+    ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
     if [ "$FIRST_UNATTACHED" ]; then
         tmux attach-session -t $FIRST_UNATTACHED && exit 0
     else
