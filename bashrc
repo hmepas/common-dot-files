@@ -175,3 +175,6 @@ fi
 # End of fzf
 
 . ~/bin/z.sh
+
+# some how needed for my mac os x
+bind '"\e[1~":beginning-of-line'
