@@ -178,3 +178,4 @@ fi
 
 # some how needed for my mac os x
 bind '"\e[1~":beginning-of-line'
+bind '"\e[4~":end-of-line'
