@@ -1,3 +1,5 @@
+
+##General installation
 ```bash
 cd
 git clone https://github.com/hmepas/common-dot-files.git
@@ -13,4 +15,17 @@ chmod +x ~/bin/find
 
 wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O ~/bin/z.sh
 chmod +x ~/bin/z.sh
+```
+
+Then install fzf if neccessary
+
+##Mac OS X fzf installation
+```
+brew install fzf
+```
+
+##Linux fzf installation
+```
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 ```
