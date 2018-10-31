@@ -181,6 +181,6 @@ bind '"\e[1~":beginning-of-line'
 bind '"\e[4~":end-of-line'
 
 # Local bash additions
-for f in ~/.bashrc_local/*.rc; do
+for f in ~/.bashrc_local/*.sh; do
     source $f
 done
