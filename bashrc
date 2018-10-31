@@ -179,3 +179,8 @@ fi
 # some how needed for my mac os x
 bind '"\e[1~":beginning-of-line'
 bind '"\e[4~":end-of-line'
+
+# Local bash additions
+for f in ~/.bashrc_local/*.rc; do
+    source $f
+done

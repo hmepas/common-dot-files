@@ -7,6 +7,9 @@ cd common-dot-files
 for i in bashrc  dir_colors  gitconfig  tmux.conf profile; do
     cp $i ~/.$i
 done
+
+mkdir -p ~/.bashrc_local
+
 mkdir ~/bin
 curl https://raw.githubusercontent.com/hmepas/foose/master/foose > ~/bin/p
 chmod +x ~/bin/p
