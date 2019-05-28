@@ -16,6 +16,16 @@ shopt -s histappend
 HISTSIZE=100000
 HISTFILESIZE=200000
 
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     HOSTOS=Linux;;
+    Darwin*)    HOSTOS=Mac;;
+    CYGWIN*)    HOSTOS=Cygwin;;
+    MINGW*)     HOSTOS=MinGw;;
+    *)          HOSTOS="UNKNOWN:${unameOut}"
+esac
+export HOSTOS
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -27,11 +37,6 @@ shopt -s checkwinsize
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -70,6 +75,7 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 alias hcl='history -c; history -r;' # re-read history file
 
 # some more ls aliases
+alias ls='ls -G'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
@@ -184,3 +190,8 @@ bind '"\e[4~":end-of-line'
 for f in ~/.bashrc_local/*.sh; do
     source $f
 done
+
+if [ $HOSTOS = "Mac" ]; then # we are under Mac
+    source ~/.bashrc_macosx
+fi
+

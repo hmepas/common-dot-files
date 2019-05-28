@@ -1,0 +1,6 @@
+# some how needed for my mac os x
+bind '"\e[1~":beginning-of-line'
+bind '"\e[4~":end-of-line'
+bind '"\e\e[D": backward-word'
+bind '"\e\e[C": forward-word'
+
