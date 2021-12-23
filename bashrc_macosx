@@ -4,3 +4,6 @@ bind '"\e[4~":end-of-line'
 bind '"\e\e[D": backward-word'
 bind '"\e\e[C": forward-word'
 
+export PATH=/opt/homebrew/bin:$PATH
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
